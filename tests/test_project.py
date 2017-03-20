@@ -10,9 +10,8 @@ class TestProject(unittest.TestCase):
     """Project class."""
 
     project_name = 'tinypipeline'
-
-    @mock.patch('__main__.open')
-    def test_project(self, open_mock):
+    
+    def test_project(self):
         """Initialize a project."""
         project = Project(self.project_name)
         self.assertNotEqual('', project.name)
@@ -23,10 +22,9 @@ class TestProject(unittest.TestCase):
         self.assertIn(project.template, str(project))
     # end def test_project
 
-    @mock.patch('__main__.open')
     @mock.patch('os.path.exists', return_value=True)
     @mock.patch('os.listdir', return_value=['tinypipeline'])
-    def test_find_projects(self, listdir, exists, open_mock):
+    def test_find_projects(self, listdir, exists):
         """Get all available projects."""
         projects = Project.find_projects()
         self.assertIn(self.project_name, [p.name for p in projects])
