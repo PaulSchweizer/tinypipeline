@@ -3,6 +3,7 @@
 # tinypipeline
 - A mini pipeline to handle personal projects
 - It's based on the file system
+
 # Folder Structure
     ProjectsRoot
         ProjectName
