@@ -23,11 +23,8 @@ Searching for files in directory /home/travis/build/PaulSchweizer/tinypipeline/c
 Searching for files in directory /home/travis/build/PaulSchweizer/tinypipeline/code_docs/tinypipeline/.git/refs/tags
 Searching for files to process...
 Searching for files in directory /home/travis/build/PaulSchweizer/tinypipeline/tinypipeline
-Searching for files in directory /home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/__pycache__
 Searching for files in directory /home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/core
-Searching for files in directory /home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/core/__pycache__
 Searching for files in directory /home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/tools
-Searching for files in directory /home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/tools/__pycache__
 Reading and parsing tag files
 Reading /home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/__init__.py...
 Parsing file /home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/__init__.py...
