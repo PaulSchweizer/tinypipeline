@@ -11,6 +11,8 @@ class TestProject(unittest.TestCase):
 
     project_name = 'tinypipeline'
     
+    print open
+    
     @mock.patch('tinypipeline.core.project.open')
     def test_project(self, mocked_open):
         """Initialize a project."""
