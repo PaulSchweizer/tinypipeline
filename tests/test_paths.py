@@ -1,4 +1,3 @@
-import mock
 import re
 import unittest
 

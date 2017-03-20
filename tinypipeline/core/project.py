@@ -12,38 +12,33 @@ class Project(object):
     """Representation of a project."""
 
     def __init__(self, name):
-        """Initialize Project."""
+        """Initialize the Project by the given name.
+
+        Add the information from the config file, if possible.
+        Args:
+            name (str): The (unique) name of the project
+        """
         super(Project, self).__init__()
         self.name = name
-        self.path = Paths.project(project=name)
-        self.config = Paths.project_config(project=name)
-        with open(self.config, 'r') as c:
-            for attr, value in json.load(c).items():
-                setattr(self, attr, value)
-            # end for
-        # end with
+        self.description = str
+        self.template = str
+
+        project_config = Paths.project_config(project=name)
+        if os.path.exists(project_config):
+            with open(project_config, 'r') as c:
+                for attr, value in json.load(c).items():
+                    setattr(self, attr, value)
+                # end for
+            # end with
+        # end if
     # end def __init__
 
     def __str__(self):
         """Pretty string representation."""
         return ('Project:       {self.name}\n'
                 'Description:   {self.description}\n'
-                'Type:          {self.project_type}\n').format(self=self)
+                'Template:      {self.template}\n').format(self=self)
     # end def __str__
-
-    @staticmethod
-    def create(name, description, project_type):
-        """Create a new Project on disc."""
-        path = Paths.project(project=name)
-        if os.path.exists(path):
-            return
-        # end if
-        os.makedirs(path)
-        data = dict(description=description, project_type=project_type)
-        with open(Paths.project_config(project=name), 'w') as c:
-            json.dump(data, c, indent=4)
-        # end with
-    # end def create
 
     @staticmethod
     def find_projects():

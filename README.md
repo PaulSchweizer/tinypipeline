@@ -6,23 +6,26 @@
 # Folder Structure
     ProjectsRoot
         ProjectName
-          
+
           .tinypipeline.project
-          
+              {"description": "A description ..."}
+
           _unsorted
-            [Any unsorted material]
-          
+            [Any unsorted or temporary material]
+
           maya
             ProjectName
               scenes
-                model
-                  AssetName
+                AssetName
+                  model
                     work
                       AssetName_model_work_v0001.ma
                     published
                       AssetName_model_v0001.ma
                       AssetName_model.ma (symlinked to latest version)
-                      
+                  animation
+                    ...
+
           photoshop
             _unsorted
               [Any random reference material]
@@ -31,11 +34,11 @@
                 AssetName_v001.psd
             images
               [exported images]
-              
+
           python
             python_module
               python_module.py
-          
+
           unity
             ProjectName
               Assets
