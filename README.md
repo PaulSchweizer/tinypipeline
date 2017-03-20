@@ -9,7 +9,7 @@
         ProjectName
 
           .tinypipeline.project
-              {"description": "A description ..."}
+              {"description": "A description ...", "template": "..."}
 
           _unsorted
             [Any unsorted or temporary material]
