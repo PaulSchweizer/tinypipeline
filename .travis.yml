@@ -15,15 +15,15 @@ install:
 # command to run tests
 script:
     - nosetests --with-coverage --cover-erase --cover-html --cover-package=tinypipeline
-    - cd $TRAVIS_BUILD_DIR
-    - chmod +x .deploy_doxygen.sh
-    - ./.deploy_doxygen.sh
 
 after_success:
     - codeclimate-test-reporter
     - coverage xml
     - python-codacy-coverage -r coverage.xml
-
+    - cd $TRAVIS_BUILD_DIR
+    - chmod +x .deploy_doxygen.sh
+    - ./.deploy_doxygen.sh
+    
 # Blacklist
 branches:
   except:
