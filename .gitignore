@@ -1,3 +1,6 @@
+cover
+.coverage
+
 # Sublime
 *.sublime-project
 *.sublime-workspace
