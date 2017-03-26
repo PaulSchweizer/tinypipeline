@@ -11,7 +11,7 @@ class ProjectCreator(object):
     """Create the necessary folders on disc for a project."""
 
     @staticmethod
-    def create(name, description, template='base'):
+    def create(name, description='', template='base'):
         """Create a new Project on disc."""
         path = Paths.project(project=name)
         if not os.path.exists(path):
