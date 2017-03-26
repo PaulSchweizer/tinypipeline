@@ -10,7 +10,7 @@ class TestProject(unittest.TestCase):
     """Project class."""
 
     project_name = 'tinypipeline'
-    
+
     @mock.mock_open()
     @mock.patch('tinypipeline.core.project.open')
     def test_project(self, mocked_open):
@@ -23,7 +23,7 @@ class TestProject(unittest.TestCase):
         self.assertIn(project.description, str(project))
         self.assertIn(project.template, str(project))
     # end def test_project
-    
+
     @mock.mock_open()
     @mock.patch('os.path.exists', return_value=True)
     @mock.patch('os.listdir', return_value=['tinypipeline'])

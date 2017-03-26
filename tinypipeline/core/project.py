@@ -25,8 +25,8 @@ class Project(object):
 
         project_config = Paths.project_config(project=name)
         if os.path.exists(project_config):
-            with open(project_config, 'r') as c:
-                for attr, value in json.load(c).items():
+            with open(project_config, 'r') as cfg:
+                for attr, value in json.load(cfg).items():
                     setattr(self, attr, value)
                 # end for
             # end with

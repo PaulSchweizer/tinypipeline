@@ -23,7 +23,7 @@ after_success:
     - cd $TRAVIS_BUILD_DIR
     - chmod +x .deploy_doxygen.sh
     - ./.deploy_doxygen.sh
-    
+
 # Blacklist
 branches:
   except:

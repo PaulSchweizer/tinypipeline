@@ -14,8 +14,8 @@ class Paths(object):
         if attr in config.patterns.keys():
             return partial(Paths.get, attr)
         else:
-            raise AttributeError('Invalid pattern \'{0}\'. {1}'.format(attr,
-                                                                   str(self)))
+            raise AttributeError('Invalid pattern \'{0}\'. {1}'
+                                 .format(attr, str(self)))
         # end if
     # end def __getattr__
 
