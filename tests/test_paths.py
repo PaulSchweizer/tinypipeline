@@ -6,7 +6,6 @@ from tinypipeline.core import config
 
 
 class TestPaths(unittest.TestCase):
-
     """Test the Paths class."""
 
     def test_get(self):
