@@ -8,7 +8,6 @@ __all__ = ['Project']
 
 
 class Project(object):
-
     """Representation of a project."""
 
     def __init__(self, name):
@@ -41,7 +40,7 @@ class Project(object):
     # end def __str__
 
     @staticmethod
-    def find_projects():
+    def all_projects():
         """Find all available projects."""
         projects = list()
         for name in os.listdir(config.root):
@@ -50,5 +49,5 @@ class Project(object):
             # end if
         # end for
         return projects
-    # end def find_projects
+    # end def all_projects
 # end class Project

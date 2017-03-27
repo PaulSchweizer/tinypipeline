@@ -27,7 +27,7 @@ class TestProject(unittest.TestCase):
     @mock.patch('os.listdir', return_value=['tinypipeline'])
     def test_find_projects(self, listdir, exists, mock_open):
         """Get all available projects."""
-        projects = Project.find_projects()
+        projects = Project.all_projects()
         self.assertIn(self.project_name, [p.name for p in projects])
     # end def test
 # end class TestProject
