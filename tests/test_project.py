@@ -9,10 +9,11 @@ class TestProject(unittest.TestCase):
     """Project class."""
 
     project_name = 'tinypipeline'
-
+    
+    @mock.patch('os.path.exists', return_value=True)
     @mock.patch('__builtin__.open', new_callable=mock.mock_open,
                 read_data='{"description": "test", "template": "test"}')
-    def test_project(self, mock_open):
+    def test_project(self, mock_open, exists):
         """Initialize a project."""
         prj = project.Project(self.project_name)
         self.assertEqual(prj.name, TestProject.project_name)
