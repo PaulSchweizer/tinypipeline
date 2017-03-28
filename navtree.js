@@ -5,6 +5,7 @@ var NAVTREE =
       [ "Namespace List", "namespaces.xhtml", "namespaces" ],
       [ "Namespace Members", "namespacemembers.xhtml", [
         [ "All", "namespacemembers.xhtml", null ],
+        [ "Functions", "namespacemembers_func.xhtml", null ],
         [ "Variables", "namespacemembers_vars.xhtml", null ]
       ] ]
     ] ],
