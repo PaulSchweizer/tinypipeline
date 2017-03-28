@@ -1,7 +1,7 @@
 import mock
 import unittest
 
-from tinypipeline.core.project import Project
+from tinypipeline.core import project
 
 
 class TestProject(unittest.TestCase):
@@ -9,25 +9,25 @@ class TestProject(unittest.TestCase):
 
     project_name = 'tinypipeline'
 
-    @mock.patch('builtins.open', new_callable=mock.mock_open,
+    @mock.patch('tinypipeline.core.project.open', new_callable=mock.mock_open,
                 read_data='{"description": "test", "template": "test"}')
     def test_project(self, mock_open):
         """Initialize a project."""
-        project = Project(self.project_name)
-        self.assertEqual(project.name, TestProject.project_name)
-        self.assertEqual(project.description, 'test')
-        self.assertEqual(project.template, 'test')
-        self.assertIn(TestProject.project_name, str(project))
-        self.assertIn('test', str(project))
+        prj = project.Project(self.project_name)
+        self.assertEqual(prj.name, TestProject.project_name)
+        self.assertEqual(prj.description, 'test')
+        self.assertEqual(prj.template, 'test')
+        self.assertIn(TestProject.project_name, str(prj))
+        self.assertIn('test', str(prj))
     # end def test_project
 
-    @mock.patch('builtins.open', new_callable=mock.mock_open,
+    @mock.patch('tinypipeline.core.project.open', new_callable=mock.mock_open,
                 read_data='{"description": "", "template": ""}')
     @mock.patch('os.path.exists', return_value=True)
     @mock.patch('os.listdir', return_value=['tinypipeline'])
     def test_find_projects(self, listdir, exists, mock_open):
         """Get all available projects."""
-        projects = Project.all_projects()
+        projects = project.Project.all_projects()
         self.assertIn(self.project_name, [p.name for p in projects])
     # end def test
 # end class TestProject
