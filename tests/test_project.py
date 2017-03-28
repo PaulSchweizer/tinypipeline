@@ -9,7 +9,7 @@ class TestProject(unittest.TestCase):
 
     project_name = 'tinypipeline'
 
-    @mock.patch('__builtins__.open', new_callable=mock.mock_open,
+    @mock.patch('builtins.open', new_callable=mock.mock_open,
                 read_data='{"description": "test", "template": "test"}')
     def test_project(self, mock_open):
         """Initialize a project."""
@@ -21,7 +21,7 @@ class TestProject(unittest.TestCase):
         self.assertIn('test', str(project))
     # end def test_project
 
-    @mock.patch('__builtins__.open', new_callable=mock.mock_open,
+    @mock.patch('builtins.open', new_callable=mock.mock_open,
                 read_data='{"description": "", "template": ""}')
     @mock.patch('os.path.exists', return_value=True)
     @mock.patch('os.listdir', return_value=['tinypipeline'])
