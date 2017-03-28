@@ -9,7 +9,7 @@ class TestProject(unittest.TestCase):
 
     project_name = 'tinypipeline'
 
-    @mock.patch('open', new_callable=mock.mock_open,
+    @mock.patch('__main__.open', new_callable=mock.mock_open,
                 read_data='{"description": "test", "template": "test"}')
     def test_project(self, mock_open):
         """Initialize a project."""
