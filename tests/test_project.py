@@ -1,8 +1,10 @@
 import sys
 if sys.version_info[0] < 3:
-    import __builtin__ as builtins
+    import __builtin__
+    open_patch = '__builtin__.open'
 else:
     import builtins
+    open_patch = 'builtins.open'
 import mock
 import unittest
 
@@ -15,7 +17,7 @@ class TestProject(unittest.TestCase):
     project_name = 'tinypipeline'
     
     @mock.patch('os.path.exists', return_value=True)
-    @mock.patch('builtins.open', new_callable=mock.mock_open,
+    @mock.patch(open_patch, new_callable=mock.mock_open,
                 read_data='{"description": "test", "template": "test"}')
     def test_project(self, mock_open, exists):
         """Initialize a project."""
@@ -27,7 +29,7 @@ class TestProject(unittest.TestCase):
         self.assertIn('test', str(prj))
     # end def test_project
 
-    @mock.patch('builtins.open', new_callable=mock.mock_open,
+    @mock.patch(open_patch, new_callable=mock.mock_open,
                 read_data='{"description": "", "template": ""}')
     @mock.patch('os.path.exists', return_value=True)
     @mock.patch('os.listdir', return_value=['tinypipeline'])
