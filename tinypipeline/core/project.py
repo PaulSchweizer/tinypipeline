@@ -19,8 +19,8 @@ class Project(object):
         """
         super(Project, self).__init__()
         self.name = name
-        self.description = str
-        self.template = str
+        self.description = ''
+        self.template = ''
 
         project_config = Paths.project_config(project=name)
         if os.path.exists(project_config):
