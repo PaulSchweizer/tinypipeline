@@ -3,4 +3,3 @@ coverage
 codeclimate-test-reporter
 codacy-coverage
 doxypypy
-future
