@@ -1,10 +1,13 @@
 import sys
+
 if sys.version_info[0] < 3:
     import __builtin__
     open_patch = '__builtin__.open'
 else:
     import builtins
     open_patch = 'builtins.open'
+    basestring = str
+
 import os
 import re
 import unittest
