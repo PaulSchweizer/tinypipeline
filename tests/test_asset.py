@@ -6,7 +6,6 @@ if sys.version_info[0] < 3:
 else:
     import builtins
     open_patch = 'builtins.open'
-    basestring = str
 
 import os
 import re
