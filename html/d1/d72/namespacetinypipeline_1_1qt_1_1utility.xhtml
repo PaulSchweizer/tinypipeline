@@ -52,6 +52,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="../../index.xhtml"><span>Main&#160;Page</span></a></li>
+      <li><a href="../../pages.xhtml"><span>Related&#160;Pages</span></a></li>
       <li class="current"><a href="../../namespaces.xhtml"><span>Namespaces</span></a></li>
       <li><a href="../../annotated.xhtml"><span>Classes</span></a></li>
       <li>
@@ -93,10 +94,166 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 </script>
 <div id="doc-content">
 <div class="header">
+  <div class="summary">
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">tinypipeline::qt::utility Namespace Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+<table class="memberdecls">
+<tr><td colspan="2"><h2><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d72/namespacetinypipeline_1_1qt_1_1utility.xhtml#ae05ff964367722bd9b34246ed87bb163">ui_class</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Build a class from a designer .ui file.  <a href="#ae05ff964367722bd9b34246ed87bb163"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d72/namespacetinypipeline_1_1qt_1_1utility.xhtml#aa89fdb345dc11922d5d66f1e3b0dd5c3">_load_ui_type</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Load a ui file for PySide.  <a href="#aa89fdb345dc11922d5d66f1e3b0dd5c3"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d72/namespacetinypipeline_1_1qt_1_1utility.xhtml#a103d4202ed2b1b56832a374a080571f3">get_ui_file_path</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the ui file for the given widget.  <a href="#a103d4202ed2b1b56832a374a080571f3"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d72/namespacetinypipeline_1_1qt_1_1utility.xhtml#a32301e17d68fc2793d5364b3b5e4ec95">get_css_file_path</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the stylesheet file for the given widget.  <a href="#a32301e17d68fc2793d5364b3b5e4ec95"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d72/namespacetinypipeline_1_1qt_1_1utility.xhtml#a02a09d1daecd614992653a53f3e1fd58">set_stylesheet</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the style sheet to the given widget.  <a href="#a02a09d1daecd614992653a53f3e1fd58"></a><br/></td></tr>
+</table>
+<hr/><h2>Function Documentation</h2>
+<a class="anchor" id="ae05ff964367722bd9b34246ed87bb163"></a><!-- doxytag: member="tinypipeline::qt::utility::ui_class" ref="ae05ff964367722bd9b34246ed87bb163" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def <a class="el" href="../../d1/d72/namespacetinypipeline_1_1qt_1_1utility.xhtml#ae05ff964367722bd9b34246ed87bb163">tinypipeline.qt.utility.ui_class</a> </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>widget_file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>widget_name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Build a class from a designer .ui file. </p>
+
+</div>
+</div>
+<a class="anchor" id="aa89fdb345dc11922d5d66f1e3b0dd5c3"></a><!-- doxytag: member="tinypipeline::qt::utility::_load_ui_type" ref="aa89fdb345dc11922d5d66f1e3b0dd5c3" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def <a class="el" href="../../d1/d72/namespacetinypipeline_1_1qt_1_1utility.xhtml#aa89fdb345dc11922d5d66f1e3b0dd5c3">tinypipeline.qt.utility._load_ui_type</a> </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>ui_file</em></td><td>)</td>
+          <td><code> [private]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Load a ui file for PySide. </p>
+<p>PySide lacks the "_load_ui_type" command, so we have to convert the UI file to python code in-memory first and then execute it in a special frame to retrieve the form_class. Args: ui_file (str): The .ui file. Returns: The base and form class, derived from the .ui file. </p>
+
+</div>
+</div>
+<a class="anchor" id="a103d4202ed2b1b56832a374a080571f3"></a><!-- doxytag: member="tinypipeline::qt::utility::get_ui_file_path" ref="a103d4202ed2b1b56832a374a080571f3" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def <a class="el" href="../../d1/d72/namespacetinypipeline_1_1qt_1_1utility.xhtml#a103d4202ed2b1b56832a374a080571f3">tinypipeline.qt.utility.get_ui_file_path</a> </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>widget_file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>widget_name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Retrieve the ui file for the given widget. </p>
+<p>It is assumed that it is set up inside the standardized resource folder. Args: widget_file (str): The file path to the widget code. widget_name (str): The class name of the widget. Returns: The file path for the ui file. </p>
+
+</div>
+</div>
+<a class="anchor" id="a32301e17d68fc2793d5364b3b5e4ec95"></a><!-- doxytag: member="tinypipeline::qt::utility::get_css_file_path" ref="a32301e17d68fc2793d5364b3b5e4ec95" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def <a class="el" href="../../d1/d72/namespacetinypipeline_1_1qt_1_1utility.xhtml#a32301e17d68fc2793d5364b3b5e4ec95">tinypipeline.qt.utility.get_css_file_path</a> </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>widget_file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>widget_name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Retrieve the stylesheet file for the given widget. </p>
+<p>It is assumed that it is set up inside the standardized resource folder. Args: widget_file (str): The file path to the widget code. widget_name (str): The class name of the widget. Returns: The file path for the stylesheet file. </p>
+
+</div>
+</div>
+<a class="anchor" id="a02a09d1daecd614992653a53f3e1fd58"></a><!-- doxytag: member="tinypipeline::qt::utility::set_stylesheet" ref="a02a09d1daecd614992653a53f3e1fd58" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def <a class="el" href="../../d1/d72/namespacetinypipeline_1_1qt_1_1utility.xhtml#a02a09d1daecd614992653a53f3e1fd58">tinypipeline.qt.utility.set_stylesheet</a> </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>widget</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>widget_file</em> = <code>None</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Set the style sheet to the given widget. </p>
+<p>The general stylesheet and an additional stylesheet for the given widget are merged. For this to work, the widget has to come with a resource folder on the same folder level and a .css file named like the class name. Args: widget (QWidget): The widget. widget_file (str): Optional file path of the widget. </p>
+
+</div>
+</div>
 </div><!-- contents -->
 </div>
 <!-- window showing the filter options -->
@@ -119,7 +276,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
       <li class="navelem"><a class="el" href="../../d1/db1/namespacetinypipeline_1_1qt.xhtml">qt</a>      </li>
       <li class="navelem"><a class="el" href="../../d1/d72/namespacetinypipeline_1_1qt_1_1utility.xhtml">utility</a>      </li>
 
-    <li class="footer">Generated on Tue Mar 28 2017 23:54:47 for Tiny Pipeline by
+    <li class="footer">Generated on Sun Apr 2 2017 17:18:35 for Tiny Pipeline by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.6.1 </li>
    </ul>

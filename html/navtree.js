@@ -1,16 +1,19 @@
 var NAVTREE =
 [
   [ "Tiny Pipeline", "index.xhtml", [
+    [ "Related Pages", "pages.xhtml", "pages" ],
     [ "Namespaces", null, [
       [ "Namespace List", "namespaces.xhtml", "namespaces" ],
       [ "Namespace Members", "namespacemembers.xhtml", [
         [ "All", "namespacemembers.xhtml", null ],
+        [ "Functions", "namespacemembers_func.xhtml", null ],
         [ "Variables", "namespacemembers_vars.xhtml", null ]
       ] ]
     ] ],
     [ "Classes", null, [
       [ "Class List", "annotated.xhtml", "annotated" ],
       [ "Class Index", "classes.xhtml", null ],
+      [ "Class Hierarchy", "hierarchy.xhtml", "hierarchy" ],
       [ "Class Members", "functions.xhtml", [
         [ "All", "functions.xhtml", null ],
         [ "Functions", "functions_func.xhtml", null ],
