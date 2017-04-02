@@ -15,7 +15,7 @@ class TestPaths(unittest.TestCase):
             kwargs = {p: 'REPLACED' for p in regex.findall(pattern)}
             path = getattr(Paths, name)(**kwargs)
             self.assertTrue(path.startswith(config.root))
-            self.assertEqual(path.count('REPLACED'), len(kwargs.keys()))
+            self.assertGreaterEqual(path.count('REPLACED'), len(kwargs.keys()))
         # end for
 
         with self.assertRaises(AttributeError):

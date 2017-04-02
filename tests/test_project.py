@@ -38,6 +38,16 @@ class TestProject(unittest.TestCase):
         projects = project.Project.all_projects()
         self.assertIn(self.project_name, [p.name for p in projects])
     # end def test
+
+    def test_current_project(self):
+        """Set and get the current project from the env var."""
+        project = Project(self.project_name)
+
+        self.assertNotEqual(project.name, Project.current().name)
+
+        project.set_as_current()
+        self.assertEqual(project.name, Project.current().name)
+    # end def test_current_project
 # end class TestProject
 
 

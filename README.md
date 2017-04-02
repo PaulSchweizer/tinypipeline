@@ -17,8 +17,8 @@
           maya
             ProjectName
               scenes
-                AssetName
-                  model
+                name (Asset.name)
+                  model (Asset.kind)
                     work
                       AssetName_model_work_v0001.ma
                     published

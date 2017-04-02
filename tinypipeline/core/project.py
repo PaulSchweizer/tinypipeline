@@ -50,4 +50,15 @@ class Project(object):
         # end for
         return projects
     # end def all_projects
+
+    @staticmethod
+    def current():
+        """The current Project taken from TINYPIPELINE_PROJECT env var."""
+        return Project(os.environ.get('TINYPIPELINE_PROJECT', '__Default__'))
+    # end def current
+
+    def set_as_current(self):
+        """Set the env var to this Project."""
+        os.environ['TINYPIPELINE_PROJECT'] = self.name
+    # end def set_as_current
 # end class Project
