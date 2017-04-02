@@ -1,3 +1,10 @@
+import sys
+if sys.version_info[0] < 3:
+    import __builtin__
+    open_patch = '__builtin__.open'
+else:
+    import builtins
+    open_patch = 'builtins.open'
 import os
 import re
 import unittest
@@ -19,8 +26,7 @@ class TestAsset(unittest.TestCase):
         self.assertEqual(str(asset_a), str(asset_b))
     # end def test_init
 
-    @mock.patch('tinypipeline.core.asset.open', new_callable=mock.mock_open,
-                read_data='Some Notes')
+    @mock.patch(open_patch, new_callable=mock.mock_open, read_data='Some Notes')
     @mock.patch('glob.glob')
     @mock.patch('os.path.exists', return_value=False)
     def test_workfile(self, exists, glob, mock_open):
@@ -38,8 +44,7 @@ class TestAsset(unittest.TestCase):
         self.assertEqual(12, len(asset.workfiles))
     # end def test_workfile
 
-    @mock.patch('tinypipeline.core.asset.open', new_callable=mock.mock_open,
-                read_data='Some Notes')
+    @mock.patch(open_patch, new_callable=mock.mock_open, read_data='Some Notes')
     @mock.patch('glob.glob')
     @mock.patch('os.path.exists', return_value=False)
     def test_versions(self, exists, glob, mock_open):
@@ -57,8 +62,7 @@ class TestAsset(unittest.TestCase):
         self.assertEqual(12, len(asset.versions))
     # end def test_versions
 
-    @mock.patch('tinypipeline.core.asset.open', new_callable=mock.mock_open,
-                read_data='Some Notes')
+    @mock.patch(open_patch, new_callable=mock.mock_open, read_data='Some Notes')
     @mock.patch('os.path.exists', return_value=False)
     def test_latest(self, exists, mock_open):
         """Retrieve the latest published version."""
@@ -71,8 +75,7 @@ class TestAsset(unittest.TestCase):
         self.assertIsNotNone(asset.latest_version)
     # end def test_latest
 
-    @mock.patch('tinypipeline.core.asset.open', new_callable=mock.mock_open,
-                read_data='Some Notes')
+    @mock.patch(open_patch, new_callable=mock.mock_open, read_data='Some Notes')
     @mock.patch('glob.glob')
     @mock.patch('os.path.exists', return_value=False)
     def test_next_version(self, exists, glob, mock_open):
@@ -103,8 +106,7 @@ class TestAsset(unittest.TestCase):
                          asset.next_version.path)
     # end def test_next_version
 
-    @mock.patch('tinypipeline.core.asset.open', new_callable=mock.mock_open,
-                read_data='Some Notes')
+    @mock.patch(open_patch, new_callable=mock.mock_open, read_data='Some Notes')
     @mock.patch('os.path.exists', return_value=True)
     def test_asset_file(self, exists, mock_open):
         """AssetFile contains the path, notes and path to the notes."""

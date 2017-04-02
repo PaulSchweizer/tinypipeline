@@ -8,20 +8,20 @@ else:
 import mock
 import unittest
 
-from tinypipeline.core import project
+from tinypipeline.core.project import Project
 
 
 class TestProject(unittest.TestCase):
     """Project class."""
 
     project_name = 'tinypipeline'
-    
+
     @mock.patch('os.path.exists', return_value=True)
     @mock.patch(open_patch, new_callable=mock.mock_open,
                 read_data='{"description": "test", "template": "test"}')
     def test_project(self, mock_open, exists):
         """Initialize a project."""
-        prj = project.Project(self.project_name)
+        prj = Project(self.project_name)
         self.assertEqual(prj.name, TestProject.project_name)
         self.assertEqual(prj.description, 'test')
         self.assertEqual(prj.template, 'test')
@@ -35,7 +35,7 @@ class TestProject(unittest.TestCase):
     @mock.patch('os.listdir', return_value=['tinypipeline'])
     def test_find_projects(self, listdir, exists, mock_open):
         """Get all available projects."""
-        projects = project.Project.all_projects()
+        projects = Project.all_projects()
         self.assertIn(self.project_name, [p.name for p in projects])
     # end def test
 
