@@ -26,63 +26,98 @@ Searching for files in directory /home/travis/build/PaulSchweizer/tinypipeline/t
 Searching for files in directory /home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/__pycache__
 Searching for files in directory /home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/core
 Searching for files in directory /home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/core/__pycache__
+Searching for files in directory /home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/core/flow
+Searching for files in directory /home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/core/flow/__pycache__
 Searching for files in directory /home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/qt
 Searching for files in directory /home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/qt/__pycache__
 Searching for files in directory /home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/tools
 Searching for files in directory /home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/tools/__pycache__
+Searching for files in directory /home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/tools/asset_manager
+Searching for files in directory /home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/tools/asset_manager/__pycache__
+Searching for files in directory /home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/tools/asset_manager/resource
 Searching for files in directory /home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/tools/maya_tools
 Searching for files in directory /home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/tools/maya_tools/__pycache__
 Searching for files in directory /home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/tools/project_manager
 Searching for files in directory /home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/tools/project_manager/__pycache__
-Searching for files in directory /home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/tools/project_manager/resource
-Reading and parsing tag files
-Reading /home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/__init__.py...
-Parsing file /home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/__init__.py...
-Reading /home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/core/__init__.py...
-Parsing file /home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/core/__init__.py...
-Reading /home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/core/asset.py...
-Parsing file /homeTraceback (most recent call last):
-  File "/home/travis/virtualenv/python3.6.0/bin/doxypypy", line 11, in <module>
-    sys.exit(main())
-  File "/home/travis/virtualenv/python3.6.0/lib/python3.6/site-packages/doxypypy/doxypypy.py", line 830, in main
+Searching for files in directoTraceback (most recent call last):
+  File "/home/travis/virtualenv/python3.4.2/bin/doxypypy", line 9, in <module>
+    load_entry_point('doxypypy==0.8.8.6', 'console_scripts', 'doxypypy')()
+  File "/home/travis/virtualenv/python3.4.2/lib/python3.4/site-packages/doxypypy/doxypypy.py", line 830, in main
     astWalker.parseLines()
-  File "/home/travis/virtualenv/python3.6.0/lib/python3.6/site-packages/doxypypy/doxypypy.py", line 741, in parseLines
+  File "/home/travis/virtualenv/python3.4.2/lib/python3.4/site-packages/doxypypy/doxypypy.py", line 741, in parseLines
     inAst = parse(''.join(self.lines), self.inFilename)
-  File "/opt/python/3.6.0/lib/python3.6/ast.py", line 35, in parse
+  File "/opt/python/3.4.2/lib/python3.4/ast.py", line 35, in parse
+    return compile(source, filename, mode, PyCF_ONLY_AST)
+  File "/home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/core/flow/flow.py", line 134
+    print 'Computing', self.__class__.__name__
+                    ^
+SyntaxError: Missing parentheses in call to 'print'
+Traceback (most recent call last):
+  File "/home/travis/virtualenv/python3.4.2/bin/doxypypy", line 9, in <module>
+    load_entry_point('doxypypy==0.8.8.6', 'console_scripts', 'doxypypy')()
+  File "/home/travis/virtualenv/python3.4.2/lib/python3.4/site-packages/doxypypy/doxypypy.py", line 830, in main
+    astWalker.parseLines()
+  File "/home/travis/virtualenv/python3.4.2/lib/python3.4/site-packages/doxypypy/doxypypy.py", line 741, in parseLines
+    inAst = parse(''.join(self.lines), self.inFilename)
+  File "/opt/python/3.4.2/lib/python3.4/ast.py", line 35, in parse
     return compile(source, filename, mode, PyCF_ONLY_AST)
   File "/home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/qt/utility.py", line 41
     exec pyc in frame
            ^
 SyntaxError: Missing parentheses in call to 'exec'
 Traceback (most recent call last):
-  File "/home/travis/virtualenv/python3.6.0/bin/doxypypy", line 11, in <module>
-    sys.exit(main())
-  File "/home/travis/virtualenv/python3.6.0/lib/python3.6/site-packages/doxypypy/doxypypy.py", line 830, in main
+  File "/home/travis/virtualenv/python3.4.2/bin/doxypypy", line 9, in <module>
+    load_entry_point('doxypypy==0.8.8.6', 'console_scripts', 'doxypypy')()
+  File "/home/travis/virtualenv/python3.4.2/lib/python3.4/site-packages/doxypypy/doxypypy.py", line 830, in main
     astWalker.parseLines()
-  File "/home/travis/virtualenv/python3.6.0/lib/python3.6/site-packages/doxypypy/doxypypy.py", line 741, in parseLines
+  File "/home/travis/virtualenv/python3.4.2/lib/python3.4/site-packages/doxypypy/doxypypy.py", line 741, in parseLines
     inAst = parse(''.join(self.lines), self.inFilename)
-  File "/opt/python/3.6.0/lib/python3.6/ast.py", line 35, in parse
+  File "/opt/python/3.4.2/lib/python3.4/ast.py", line 35, in parse
+    return compile(source, filename, mode, PyCF_ONLY_AST)
+  File "/home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/tools/asset_manager/asset_manager.py", line 86
+    print error
+              ^
+SyntaxError: Missing parentheses in call to 'print'
+Traceback (most recent call last):
+  File "/home/travis/virtualenv/python3.4.2/bin/doxypypy", line 9, in <module>
+    load_entry_point('doxypypy==0.8.8.6', 'console_scripts', 'doxypypy')()
+  File "/home/travis/virtualenv/python3.4.2/lib/python3.4/site-packages/doxypypy/doxypypy.py", line 830, in main
+    astWalker.parseLines()
+  File "/home/travis/virtualenv/python3.4.2/lib/python3.4/site-packages/doxypypy/doxypypy.py", line 741, in parseLines
+    inAst = parse(''.join(self.lines), self.inFilename)
+  File "/opt/python/3.4.2/lib/python3.4/ast.py", line 35, in parse
     return compile(source, filename, mode, PyCF_ONLY_AST)
   File "/home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/tools/project_creator.py", line 61
     print c
           ^
 SyntaxError: Missing parentheses in call to 'print'
 Traceback (most recent call last):
-  File "/home/travis/virtualenv/python3.6.0/bin/doxypypy", line 11, in <module>
-    sys.exit(main())
-  File "/home/travis/virtualenv/python3.6.0/lib/python3.6/site-packages/doxypypy/doxypypy.py", line 830, in main
+  File "/home/travis/virtualenv/python3.4.2/bin/doxypypy", line 9, in <module>
+    load_entry_point('doxypypy==0.8.8.6', 'console_scripts', 'doxypypy')()
+  File "/home/travis/virtualenv/python3.4.2/lib/python3.4/site-packages/doxypypy/doxypypy.py", line 830, in main
     astWalker.parseLines()
-  File "/home/travis/virtualenv/python3.6.0/lib/python3.6/site-packages/doxypypy/doxypypy.py", line 741, in parseLines
+  File "/home/travis/virtualenv/python3.4.2/lib/python3.4/site-packages/doxypypy/doxypypy.py", line 741, in parseLines
     inAst = parse(''.join(self.lines), self.inFilename)
-  File "/opt/python/3.6.0/lib/python3.6/ast.py", line 35, in parse
+  File "/opt/python/3.4.2/lib/python3.4/ast.py", line 35, in parse
     return compile(source, filename, mode, PyCF_ONLY_AST)
   File "/home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/tools/project_manager/project_manager.py", line 86
     print error
               ^
 SyntaxError: Missing parentheses in call to 'print'
-/travis/build/PaulSchweizer/tinypipeline/tinypipeline/core/asset.py...
+ry /home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/tools/project_manager/resource
+Reading and parsing tag files
+Reading /home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/__init__.py...
+Parsing file /home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/__init__.py...
+Reading /home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/core/__init__.py...
+Parsing file /home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/core/__init__.py...
+Reading /home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/core/asset.py...
+Parsing file /home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/core/asset.py...
 Reading /home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/core/config.py...
 Parsing file /home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/core/config.py...
+Reading /home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/core/flow/__init__.py...
+Parsing file /home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/core/flow/__init__.py...
+Reading /home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/core/flow/flow.py...
+Parsing file /home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/core/flow/flow.py...
 Reading /home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/core/log_observer.py...
 Parsing file /home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/core/log_observer.py...
 Reading /home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/core/paths.py...
@@ -95,6 +130,10 @@ Reading /home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/qt/utility.py
 Parsing file /home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/qt/utility.py...
 Reading /home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/tools/__init__.py...
 Parsing file /home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/tools/__init__.py...
+Reading /home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/tools/asset_manager/__init__.py...
+Parsing file /home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/tools/asset_manager/__init__.py...
+Reading /home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/tools/asset_manager/asset_manager.py...
+Parsing file /home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/tools/asset_manager/asset_manager.py...
 Reading /home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/tools/maya_tools/__init__.py...
 Parsing file /home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/tools/maya_tools/__init__.py...
 Reading /home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/tools/maya_tools/publisher.py...
@@ -168,6 +207,8 @@ Generating docs for namespace tinypipeline::core::asset
 Generating docs for compound tinypipeline::core::asset::Asset...
 Generating docs for compound tinypipeline::core::asset::AssetFile...
 Generating docs for namespace tinypipeline::core::config
+Generating docs for namespace tinypipeline::core::flow
+Generating docs for namespace tinypipeline::core::flow::flow
 Generating docs for namespace tinypipeline::core::log_observer
 Generating docs for compound tinypipeline::core::log_observer::LogObserver...
 Generating docs for namespace tinypipeline::core::paths
@@ -177,6 +218,8 @@ Generating docs for compound tinypipeline::core::project::Project...
 Generating docs for namespace tinypipeline::qt
 Generating docs for namespace tinypipeline::qt::utility
 Generating docs for namespace tinypipeline::tools
+Generating docs for namespace tinypipeline::tools::asset_manager
+Generating docs for namespace tinypipeline::tools::asset_manager::asset_manager
 Generating docs for namespace tinypipeline::tools::maya_tools
 Generating docs for namespace tinypipeline::tools::maya_tools::publisher
 Generating docs for compound tinypipeline::tools::maya_tools::publisher::MayaPublisher...
