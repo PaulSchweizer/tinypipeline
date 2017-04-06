@@ -1,9 +1,5 @@
 """Asset definition."""
 import sys
-
-if sys.version_info[0] > 2:
-    basestring = str
-
 import glob
 import os
 
@@ -11,6 +7,10 @@ from tinypipeline.core import config
 from tinypipeline.core.paths import Paths
 from tinypipeline.core.project import Project
 __all__ = ['Asset', 'AssetFile']
+
+
+if sys.version_info[0] > 2:
+    basestring = str
 
 
 class Asset(object):

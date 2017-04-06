@@ -16,3 +16,6 @@ def main(project):
     ProjectCreator.create_path(tests)
     with open(os.path.join(tests, '__init__.py'), 'w'):
         pass
+
+    with open(os.path.join(Paths.project(project=project), 'requirements.txt'), 'w'):
+        pass
