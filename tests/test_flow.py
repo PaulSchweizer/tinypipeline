@@ -81,7 +81,7 @@ r = FlowEngine()
 r.nodes = [pn, en, rp]
 
 
-r.evaluate()
+# r.evaluate()
 
 
 
@@ -203,17 +203,19 @@ class SaveNotes(FlowNode):
 asset = Asset('MyProject', 'Tiger', 'model')
 
 
-nv = NextVersion()
-sf = SaveFile()
-sn = SaveNotes()
+next_version = NextVersion()
+save_file = SaveFile()
+save_notes = SaveNotes()
 
-nv._asset = asset
-nv.connect(nv.next_version, sf.asset_file)
-nv.connect(nv.next_version, sn.asset_file)
-sn._notes = 'MyNotes'
+next_version._asset = asset
+next_version.connect(next_version.next_version, save_file.asset_file)
+next_version.connect(next_version.next_version, save_notes.asset_file)
+save_notes._notes = 'MyNotes'
 
 e = FlowEngine()
-e.nodes = [nv, sf]
+e.nodes = [next_version, save_file, save_notes]
+
+# print next_version.connections
 
 e.evaluate()
 

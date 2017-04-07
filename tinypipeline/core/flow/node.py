@@ -19,7 +19,9 @@ class FlowNode(object):
 
     def connect(self, flow_out, flow_in):
         """@todo documentation for connect."""
-        self.connections[flow_out] = flow_in
+        if flow_out not in self.connections.keys():
+            self.connections[flow_out] = list()
+        self.connections[flow_out].append(flow_in)
         in_node = flow_in.im_self
         in_node.add_upstream_node(self)
         self.add_downstream_node(in_node)
@@ -41,8 +43,10 @@ class FlowNode(object):
         """@todo documentation for evaluate."""
         print('Computing: ', self)
         self.compute()
-        for flow_out, flow_in in self.connections.items():
-            flow_in(flow_out())
+        for flow_out, flow_ins in self.connections.items():
+            for flow_in in flow_ins:
+                flow_in(flow_out())
+            # end for
         # end for
     # end def evaluate
 
