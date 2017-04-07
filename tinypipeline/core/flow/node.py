@@ -8,21 +8,29 @@ class FlowNode(object):
 
     __metaclass__ = ABCMeta
 
+    flow_ins = list()
+    flow_outs = list()
+
     def __init__(self):
         """@todo documentation for __init__."""
         self.connections = dict()
         self.downstream_nodes = list()
         self.upstream_nodes = list()
-        self._flow_ins = None
-        self._flow_outs = None
     # end def __init__
 
+    def __str__(self):
+        pretty = self.__class__.__name__
+        pretty += ''.join(['\n\t(IN) {0} ({1})'.format(i, getattr(self, i))
+                             for i in self.flow_ins])
+        pretty += ''.join(['\n\t(OUT) {0} ({1})'.format(i, getattr(self, i))
+                             for i in self.flow_outs])
+        return pretty
+    
     def connect(self, flow_out, flow_in):
         """@todo documentation for connect."""
         if flow_out not in self.connections.keys():
             self.connections[flow_out] = list()
-        self.connections[flow_out].append(flow_in)
-        in_node = flow_in.im_self
+        self.connections[flow_out].append((in_node, flow_in))
         in_node.add_upstream_node(self)
         self.add_downstream_node(in_node)
     # end def connect
@@ -41,33 +49,15 @@ class FlowNode(object):
 
     def evaluate(self):
         """@todo documentation for evaluate."""
-        print('Computing: ', self)
+        print 'Computing:', self
         self.compute()
         for flow_out, flow_ins in self.connections.items():
             for flow_in in flow_ins:
-                flow_in(flow_out())
+                setattr(flow_in[0], flow_in[1], getattr(self, flow_out))
             # end for
         # end for
     # end def evaluate
-
-    @property
-    def flow_ins(self):
-        """@todo documentation for flow_ins."""
-        if self._flow_ins is None:
-            self._flow_ins = [getattr(self, m) for m in dir(self.__class__)
-                            if hasattr(getattr(self.__class__, m), 'flow_in')]
-        return self._flow_ins
-    # end def flow_ins
-
-    @property
-    def flow_outs(self):
-        """@todo documentation for flow_outs."""
-        if self._flow_outs is None:
-            self._flow_outs = [getattr(self, m) for m in dir(self.__class__)
-                             if hasattr(getattr(self.__class__, m), 'flow_out')]
-        return self._flow_outs
-    # end def flow_outs
-
+    
     @abstractmethod
     def compute(self, *args, **kwargs):
         """@todo documentation for compute."""
