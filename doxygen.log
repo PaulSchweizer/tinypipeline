@@ -40,70 +40,70 @@ Searching for files in directory /home/travis/build/PaulSchweizer/tinypipeline/t
 Searching for files in directory /home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/tools/project_manager
 Searching for files in directory /home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/tools/project_manager/__pycache__
 Searching for files in directoTraceback (most recent call last):
-  File "/home/travis/virtualenv/python3.3.5/bin/doxypypy", line 9, in <module>
-    load_entry_point('doxypypy==0.8.8.6', 'console_scripts', 'doxypypy')()
-  File "/home/travis/virtualenv/python3.3.5/lib/python3.3/site-packages/doxypypy/doxypypy.py", line 830, in main
+  File "/home/travis/virtualenv/python3.5.2/bin/doxypypy", line 11, in <module>
+    sys.exit(main())
+  File "/home/travis/virtualenv/python3.5.2/lib/python3.5/site-packages/doxypypy/doxypypy.py", line 830, in main
     astWalker.parseLines()
-  File "/home/travis/virtualenv/python3.3.5/lib/python3.3/site-packages/doxypypy/doxypypy.py", line 741, in parseLines
+  File "/home/travis/virtualenv/python3.5.2/lib/python3.5/site-packages/doxypypy/doxypypy.py", line 741, in parseLines
     inAst = parse(''.join(self.lines), self.inFilename)
-  File "/opt/python/3.3.5/lib/python3.3/ast.py", line 35, in parse
+  File "/opt/python/3.5.2/lib/python3.5/ast.py", line 35, in parse
     return compile(source, filename, mode, PyCF_ONLY_AST)
   File "/home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/core/flow/flow.py", line 147
     print 'Computing', self.__class__.__name__
                     ^
-SyntaxError: invalid syntax
+SyntaxError: Missing parentheses in call to 'print'
 Traceback (most recent call last):
-  File "/home/travis/virtualenv/python3.3.5/bin/doxypypy", line 9, in <module>
-    load_entry_point('doxypypy==0.8.8.6', 'console_scripts', 'doxypypy')()
-  File "/home/travis/virtualenv/python3.3.5/lib/python3.3/site-packages/doxypypy/doxypypy.py", line 830, in main
+  File "/home/travis/virtualenv/python3.5.2/bin/doxypypy", line 11, in <module>
+    sys.exit(main())
+  File "/home/travis/virtualenv/python3.5.2/lib/python3.5/site-packages/doxypypy/doxypypy.py", line 830, in main
     astWalker.parseLines()
-  File "/home/travis/virtualenv/python3.3.5/lib/python3.3/site-packages/doxypypy/doxypypy.py", line 741, in parseLines
+  File "/home/travis/virtualenv/python3.5.2/lib/python3.5/site-packages/doxypypy/doxypypy.py", line 741, in parseLines
     inAst = parse(''.join(self.lines), self.inFilename)
-  File "/opt/python/3.3.5/lib/python3.3/ast.py", line 35, in parse
+  File "/opt/python/3.5.2/lib/python3.5/ast.py", line 35, in parse
     return compile(source, filename, mode, PyCF_ONLY_AST)
   File "/home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/qt/utility.py", line 41
     exec pyc in frame
            ^
-SyntaxError: invalid syntax
+SyntaxError: Missing parentheses in call to 'exec'
 Traceback (most recent call last):
-  File "/home/travis/virtualenv/python3.3.5/bin/doxypypy", line 9, in <module>
-    load_entry_point('doxypypy==0.8.8.6', 'console_scripts', 'doxypypy')()
-  File "/home/travis/virtualenv/python3.3.5/lib/python3.3/site-packages/doxypypy/doxypypy.py", line 830, in main
+  File "/home/travis/virtualenv/python3.5.2/bin/doxypypy", line 11, in <module>
+    sys.exit(main())
+  File "/home/travis/virtualenv/python3.5.2/lib/python3.5/site-packages/doxypypy/doxypypy.py", line 830, in main
     astWalker.parseLines()
-  File "/home/travis/virtualenv/python3.3.5/lib/python3.3/site-packages/doxypypy/doxypypy.py", line 741, in parseLines
+  File "/home/travis/virtualenv/python3.5.2/lib/python3.5/site-packages/doxypypy/doxypypy.py", line 741, in parseLines
     inAst = parse(''.join(self.lines), self.inFilename)
-  File "/opt/python/3.3.5/lib/python3.3/ast.py", line 35, in parse
+  File "/opt/python/3.5.2/lib/python3.5/ast.py", line 35, in parse
     return compile(source, filename, mode, PyCF_ONLY_AST)
   File "/home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/tools/asset_manager/asset_manager.py", line 86
     print error
               ^
-SyntaxError: invalid syntax
+SyntaxError: Missing parentheses in call to 'print'
 Traceback (most recent call last):
-  File "/home/travis/virtualenv/python3.3.5/bin/doxypypy", line 9, in <module>
-    load_entry_point('doxypypy==0.8.8.6', 'console_scripts', 'doxypypy')()
-  File "/home/travis/virtualenv/python3.3.5/lib/python3.3/site-packages/doxypypy/doxypypy.py", line 830, in main
+  File "/home/travis/virtualenv/python3.5.2/bin/doxypypy", line 11, in <module>
+    sys.exit(main())
+  File "/home/travis/virtualenv/python3.5.2/lib/python3.5/site-packages/doxypypy/doxypypy.py", line 830, in main
     astWalker.parseLines()
-  File "/home/travis/virtualenv/python3.3.5/lib/python3.3/site-packages/doxypypy/doxypypy.py", line 741, in parseLines
+  File "/home/travis/virtualenv/python3.5.2/lib/python3.5/site-packages/doxypypy/doxypypy.py", line 741, in parseLines
     inAst = parse(''.join(self.lines), self.inFilename)
-  File "/opt/python/3.3.5/lib/python3.3/ast.py", line 35, in parse
+  File "/opt/python/3.5.2/lib/python3.5/ast.py", line 35, in parse
     return compile(source, filename, mode, PyCF_ONLY_AST)
   File "/home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/tools/project_creator.py", line 61
     print c
           ^
-SyntaxError: invalid syntax
+SyntaxError: Missing parentheses in call to 'print'
 Traceback (most recent call last):
-  File "/home/travis/virtualenv/python3.3.5/bin/doxypypy", line 9, in <module>
-    load_entry_point('doxypypy==0.8.8.6', 'console_scripts', 'doxypypy')()
-  File "/home/travis/virtualenv/python3.3.5/lib/python3.3/site-packages/doxypypy/doxypypy.py", line 830, in main
+  File "/home/travis/virtualenv/python3.5.2/bin/doxypypy", line 11, in <module>
+    sys.exit(main())
+  File "/home/travis/virtualenv/python3.5.2/lib/python3.5/site-packages/doxypypy/doxypypy.py", line 830, in main
     astWalker.parseLines()
-  File "/home/travis/virtualenv/python3.3.5/lib/python3.3/site-packages/doxypypy/doxypypy.py", line 741, in parseLines
+  File "/home/travis/virtualenv/python3.5.2/lib/python3.5/site-packages/doxypypy/doxypypy.py", line 741, in parseLines
     inAst = parse(''.join(self.lines), self.inFilename)
-  File "/opt/python/3.3.5/lib/python3.3/ast.py", line 35, in parse
+  File "/opt/python/3.5.2/lib/python3.5/ast.py", line 35, in parse
     return compile(source, filename, mode, PyCF_ONLY_AST)
   File "/home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/tools/project_manager/project_manager.py", line 86
     print error
               ^
-SyntaxError: invalid syntax
+SyntaxError: Missing parentheses in call to 'print'
 ry /home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/tools/project_manager/resource
 Reading and parsing tag files
 Reading /home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/__init__.py...
