@@ -77,9 +77,22 @@ class INode(object):
     def connect(self, flow_out, flow_in):
         """@todo documentation for connect."""
         self.connections[flow_out] = flow_in
-        self.downstream_nodes.append(flow_in.__self__)
-        self.downstream_nodes = list(set(self.downstream_nodes))
+        in_node = flow_in.im_self
+        in_node.add_upstream_node(self)
+        self.add_downstream_node(in_node)
     # end def connect
+
+    def add_upstream_node(self, node):
+        """@todo documentation for add_upstream_node."""
+        if node not in self.upstream_nodes:
+            self.upstream_nodes.append(node)
+    # end def add_upstream_node
+
+    def add_downstream_node(self, node):
+        """@todo documentation for add_downstream_node."""
+        if node not in self.downstream_nodes:
+            self.downstream_nodes.append(node)
+    # end def add_downstream_node
 
     def evaluate(self):
         """@todo documentation for evaluate."""
