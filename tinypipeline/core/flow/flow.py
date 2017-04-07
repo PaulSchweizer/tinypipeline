@@ -100,10 +100,10 @@ class INode(object):
         for flow_out, flow_in in self.connections.items():
             flow_in(flow_out())
         # end for
-
-        for downstream_node in self.downstream_nodes:
-            downstream_node.evaluate()
-        # end for
+        
+        # for downstream_node in self.downstream_nodes:
+        #     downstream_node.evaluate()
+        # # end for
     # end def evaluate
 
     @property
@@ -173,25 +173,85 @@ class EmailNode(INode):
 # end class EmailNode
 
 
+class RecipientsNode(INode):
+
+    """@todo documentation for RecipientsNode."""
+
+    _recipients = list()
+
+    @flow_out
+    def recipients(self):
+        """@todo documentation for recipients."""
+        return self._recipients
+    # end def recipients
+
+    def compute(self):
+        """@todo documentation for compute."""
+        print 'Setting the recipients.'
+        self._recipients = ['Me', 'You', 'Her']
+    # end def compute
+# end class RecipientsNode
+
+
+class Runner(object):
+
+    """@todo documentation for Runner."""
+
+    def __init__(self):
+        """Initialize Runner."""
+        super(Runner, self).__init__()
+        self.nodes = list()
+    # end def __init__
+
+    def evaluate(self):
+        """@todo documentation for evaluate."""
+        sequence = self.build_sequence()
+        for level in sorted(list(set(sequence.values()))):
+            for node in [n for n in sequence if sequence[n] == level]:
+                node.evaluate()
+        # end for
+    # end def evaluate
+
+    def build_sequence(self):
+        """@todo documentation for build_sequence."""
+        levels = dict()
+
+        for node in self.nodes:
+            self.sort_node(node, levels, level=0)
+        # end for
+
+        return levels
+
+    # end def build_sequence
+
+
+    def sort_node(self, node, parent, level):
+        """@todo documentation for sort_node."""
+        parent[node] = level
+        for downstream_node in node.downstream_nodes:
+            self.sort_node(downstream_node, parent, level=level + 1)
+    # end def sort_node
+
 # ---------------------------------------------------------------------
 # Tests
 # ---------------------------------------------------------------------
 
 pn = PublishNode()
-en = EmailNode()
-en._recipients = ['Me', 'You', 'Her']
+pn._file_to_publish = 'MyFile'
 
+en = EmailNode()
+
+rp = RecipientsNode()
+
+rp.connect(rp.recipients, en.recipients)
 pn.connect(pn.published_file, en.text)
 
-pn.evaluate()
-print en._text
+# pn.evaluate()
 
-# print pn.outputs
-# print dir(pn)
-# print pn.outputs
+r = Runner()
+r.nodes = [pn, en, rp]
 
-# print dir(pn.published_file)
 
-# print hasattr(pn.published_file, 'output')
-
-# print pn.__dict__
+r.evaluate()
+    
+    
