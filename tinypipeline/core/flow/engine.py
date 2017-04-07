@@ -37,7 +37,12 @@ class FlowEngine(object):
 
     def _sort_node(self, node, parent, level):
         """Sort the node into the correct level."""
-        parent[node] = level
+        if node in parent.keys():
+            if level > parent[node]:
+                parent[node] = level
+        else:
+            parent[node] = level
+
         for downstream_node in node.downstream_nodes:
             self._sort_node(downstream_node, parent, level=level + 1)
         # end for
