@@ -5,6 +5,7 @@ var namespaces =
     [ "tinypipeline::core::asset", "d2/d32/namespacetinypipeline_1_1core_1_1asset.xhtml", "d2/d32/namespacetinypipeline_1_1core_1_1asset" ],
     [ "tinypipeline::core::config", "d6/dd5/namespacetinypipeline_1_1core_1_1config.xhtml", "d6/dd5/namespacetinypipeline_1_1core_1_1config" ],
     [ "tinypipeline::core::flow", "d8/df2/namespacetinypipeline_1_1core_1_1flow.xhtml", null ],
+    [ "tinypipeline::core::flow::app", "db/d01/namespacetinypipeline_1_1core_1_1flow_1_1app.xhtml", "db/d01/namespacetinypipeline_1_1core_1_1flow_1_1app" ],
     [ "tinypipeline::core::flow::engine", "de/dc3/namespacetinypipeline_1_1core_1_1flow_1_1engine.xhtml", "de/dc3/namespacetinypipeline_1_1core_1_1flow_1_1engine" ],
     [ "tinypipeline::core::flow::node", "da/d62/namespacetinypipeline_1_1core_1_1flow_1_1node.xhtml", "da/d62/namespacetinypipeline_1_1core_1_1flow_1_1node" ],
     [ "tinypipeline::core::log_observer", "da/d1a/namespacetinypipeline_1_1core_1_1log__observer.xhtml", "da/d1a/namespacetinypipeline_1_1core_1_1log__observer" ],

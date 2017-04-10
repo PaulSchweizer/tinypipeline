@@ -4,10 +4,13 @@ var hierarchy =
     [ "AssetFile", "db/d2d/classtinypipeline_1_1core_1_1asset_1_1AssetFile.xhtml", null ],
     [ "AssetManager", "db/d4a/classtinypipeline_1_1tools_1_1asset__manager_1_1asset__manager_1_1AssetManager.xhtml", null ],
     [ "CreateProjectDialog", "df/de2/classtinypipeline_1_1tools_1_1project__manager_1_1project__manager_1_1CreateProjectDialog.xhtml", null ],
+    [ "FlowApp", "d9/d29/classtinypipeline_1_1core_1_1flow_1_1app_1_1FlowApp.xhtml", [
+      [ "PublisherApp", "d1/d40/classtinypipeline_1_1flow__tools_1_1publisher_1_1PublisherApp.xhtml", null ]
+    ] ],
     [ "FlowEngine", "d8/d61/classtinypipeline_1_1core_1_1flow_1_1engine_1_1FlowEngine.xhtml", null ],
     [ "FlowNode", "de/d1f/classtinypipeline_1_1core_1_1flow_1_1node_1_1FlowNode.xhtml", [
-      [ "IPublisher", "d8/dce/classtinypipeline_1_1flow__tools_1_1publisher_1_1IPublisher.xhtml", null ],
       [ "NextVersion", "d2/d5a/classtinypipeline_1_1flow__tools_1_1publisher_1_1NextVersion.xhtml", null ],
+      [ "Publish", "d4/d77/classtinypipeline_1_1flow__tools_1_1publisher_1_1Publish.xhtml", null ],
       [ "SaveFile", "db/d1a/classtinypipeline_1_1flow__tools_1_1publisher_1_1SaveFile.xhtml", null ],
       [ "SaveNotes", "dd/d21/classtinypipeline_1_1flow__tools_1_1publisher_1_1SaveNotes.xhtml", null ]
     ] ],
