@@ -23,15 +23,50 @@ Searching for files in directory /home/travis/build/PaulSchweizer/tinypipeline/c
 Searching for files in directory /home/travis/build/PaulSchweizer/tinypipeline/code_docs/tinypipeline/.git/refs/tags
 Searching for files to process...
 Searching for files in directory /home/travis/build/PaulSchweizer/tinypipeline/tinypipeline
+Searching for files in directory /home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/__pycache__
 Searching for files in directory /home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/core
+Searching for files in directory /home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/core/__pycache__
 Searching for files in directory /home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/core/flow
+Searching for files in directory /home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/core/flow/__pycache__
 Searching for files in directory /home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/flow_tools
+Searching for files in directory /home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/flow_tools/__pycache__
 Searching for files in directory /home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/qt
+Searching for files in directory /home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/qt/__pycache__
 Searching for files in directory /home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/tools
+Searching for files in directory /home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/tools/__pycache__
 Searching for files in directory /home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/tools/asset_manager
+Searching for files in directory /home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/tools/asset_manager/__pycache__
 Searching for files in directory /home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/tools/asset_manager/resource
 Searching for files in directory /home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/tools/maya_tools
-Searching for files in directory /home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/tools/project_manager
+Searching for files in directory /home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/tools/maya_tools/__pycache__
+Searching for files in directory /home/travis/build/Traceback (most recent call last):
+  File "/home/travis/virtualenv/python3.4.2/bin/doxypypy", line 9, in <module>
+    load_entry_point('doxypypy==0.8.8.6', 'console_scripts', 'doxypypy')()
+  File "/home/travis/virtualenv/python3.4.2/lib/python3.4/site-packages/doxypypy/doxypypy.py", line 830, in main
+    astWalker.parseLines()
+  File "/home/travis/virtualenv/python3.4.2/lib/python3.4/site-packages/doxypypy/doxypypy.py", line 741, in parseLines
+    inAst = parse(''.join(self.lines), self.inFilename)
+  File "/opt/python/3.4.2/lib/python3.4/ast.py", line 35, in parse
+    return compile(source, filename, mode, PyCF_ONLY_AST)
+  File "/home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/flow_tools/publisher.py", line 112
+    print e.evaluation_sequence
+          ^
+SyntaxError: Missing parentheses in call to 'print'
+Traceback (most recent call last):
+  File "/home/travis/virtualenv/python3.4.2/bin/doxypypy", line 9, in <module>
+    load_entry_point('doxypypy==0.8.8.6', 'console_scripts', 'doxypypy')()
+  File "/home/travis/virtualenv/python3.4.2/lib/python3.4/site-packages/doxypypy/doxypypy.py", line 830, in main
+    astWalker.parseLines()
+  File "/home/travis/virtualenv/python3.4.2/lib/python3.4/site-packages/doxypypy/doxypypy.py", line 741, in parseLines
+    inAst = parse(''.join(self.lines), self.inFilename)
+  File "/opt/python/3.4.2/lib/python3.4/ast.py", line 35, in parse
+    return compile(source, filename, mode, PyCF_ONLY_AST)
+  File "/home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/qt/utility.py", line 41
+    exec pyc in frame
+           ^
+SyntaxError: Missing parentheses in call to 'exec'
+PaulSchweizer/tinypipeline/tinypipeline/tools/project_manager
+Searching for files in directory /home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/tools/project_manager/__pycache__
 Searching for files in directory /home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/tools/project_manager/resource
 Reading and parsing tag files
 Reading /home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/__init__.py...
@@ -74,7 +109,37 @@ Reading /home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/tools/maya_to
 Parsing file /home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/tools/maya_tools/__init__.py...
 Reading /home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/tools/maya_tools/publisher.py...
 Parsing file /home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/tools/maya_tools/publisher.py...
-Reading /home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/tools/project_creator.py...
+Reading /home/travis/build/PaulSchweizeTraceback (most recent call last):
+  File "/home/travis/virtualenv/python3.4.2/bin/doxypypy", line 9, in <module>
+    load_entry_point('doxypypy==0.8.8.6', 'console_scripts', 'doxypypy')()
+  File "/home/travis/virtualenv/python3.4.2/lib/python3.4/site-packages/doxypypy/doxypypy.py", line 830, in main
+    astWalker.parseLines()
+  File "/home/travis/virtualenv/python3.4.2/lib/python3.4/site-packages/doxypypy/doxypypy.py", line 741, in parseLines
+    inAst = parse(''.join(self.lines), self.inFilename)
+  File "/opt/python/3.4.2/lib/python3.4/ast.py", line 35, in parse
+    return compile(source, filename, mode, PyCF_ONLY_AST)
+  File "/home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/tools/project_creator.py", line 61
+    print c
+          ^
+SyntaxError: Missing parentheses in call to 'print'
+Traceback (most recent call last):
+  File "/home/travis/virtualenv/python3.4.2/bin/doxypypy", line 9, in <module>
+    load_entry_point('doxypypy==0.8.8.6', 'console_scripts', 'doxypypy')()
+  File "/home/travis/virtualenv/python3.4.2/lib/python3.4/site-packages/doxypypy/doxypypy.py", line 830, in main
+    astWalker.parseLines()
+  File "/home/travis/virtualenv/python3.4.2/lib/python3.4/site-packages/doxypypy/doxypypy.py", line 741, in parseLines
+    inAst = parse(''.join(self.lines), self.inFilename)
+  File "/opt/python/3.4.2/lib/python3.4/ast.py", line 35, in parse
+    return compile(source, filename, mode, PyCF_ONLY_AST)
+  File "/home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/tools/project_manager/project_manager.py", line 86
+    print error
+              ^
+SyntaxError: Missing parentheses in call to 'print'
+/home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/tools/asset_manager/asset_manager.py:14: Detected potential recursive class relation between class tinypipeline::tools::asset_manager::asset_manager::AssetManager and base class tinypipeline::tools::asset_manager::asset_manager::AssetManager!
+
+/home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/tools/asset_manager/asset_manager.py:14: Detected potential recursive class relation between class tinypipeline::tools::asset_manager::asset_manager::AssetManager and base class AssetManager!
+
+r/tinypipeline/tinypipeline/tools/project_creator.py...
 Parsing file /home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/tools/project_creator.py...
 Reading /home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/tools/project_manager/__init__.py...
 Parsing file /home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/tools/project_manager/__init__.py...
@@ -90,19 +155,7 @@ Building class list...
 Associating documentation with classes...
 Computing nesting relations for classes...
 Building example list...
-Searching for enume/home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/tools/asset_manager/asset_manager.py:14: Detected potential recursive class relation between class tinypipeline::tools::asset_manager::asset_manager::AssetManager and base class tinypipeline::tools::asset_manager::asset_manager::AssetManager!
-
-/home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/tools/asset_manager/asset_manager.py:14: Detected potential recursive class relation between class tinypipeline::tools::asset_manager::asset_manager::AssetManager and base class AssetManager!
-
-/home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/tools/project_manager/project_manager.py:63: Detected potential recursive class relation between class tinypipeline::tools::project_manager::project_manager::CreateProjectDialog and base class tinypipeline::tools::project_manager::project_manager::CreateProjectDialog!
-
-/home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/tools/project_manager/project_manager.py:63: Detected potential recursive class relation between class tinypipeline::tools::project_manager::project_manager::CreateProjectDialog and base class CreateProjectDialog!
-
-/home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/tools/project_manager/project_manager.py:14: Detected potential recursive class relation between class tinypipeline::tools::project_manager::project_manager::ProjectManager and base class tinypipeline::tools::project_manager::project_manager::ProjectManager!
-
-/home/travis/build/PaulSchweizer/tinypipeline/tinypipeline/tools/project_manager/project_manager.py:14: Detected potential recursive class relation between class tinypipeline::tools::project_manager::project_manager::ProjectManager and base class ProjectManager!
-
-rations...
+Searching for enumerations...
 Searching for documented typedefs...
 Searching for members imported via using declarations...
 Searching for included using directives...
@@ -170,11 +223,6 @@ Generating docs for namespace tinypipeline::core::project
 Generating docs for compound tinypipeline::core::project::Project...
 Generating docs for namespace tinypipeline::flow_tools
 Generating docs for namespace tinypipeline::flow_tools::publisher
-Generating docs for compound tinypipeline::flow_tools::publisher::Publish...
-Generating docs for compound tinypipeline::flow_tools::publisher::NextVersion...
-Generating docs for compound tinypipeline::flow_tools::publisher::SaveFile...
-Generating docs for compound tinypipeline::flow_tools::publisher::SaveNotes...
-Generating docs for compound tinypipeline::flow_tools::publisher::PublisherApp...
 Generating docs for namespace tinypipeline::qt
 Generating docs for namespace tinypipeline::qt::utility
 Generating docs for namespace tinypipeline::tools
@@ -185,11 +233,8 @@ Generating docs for namespace tinypipeline::tools::maya_tools
 Generating docs for namespace tinypipeline::tools::maya_tools::publisher
 Generating docs for compound tinypipeline::tools::maya_tools::publisher::MayaPublisher...
 Generating docs for namespace tinypipeline::tools::project_creator
-Generating docs for compound tinypipeline::tools::project_creator::ProjectCreator...
 Generating docs for namespace tinypipeline::tools::project_manager
 Generating docs for namespace tinypipeline::tools::project_manager::project_manager
-Generating docs for compound tinypipeline::tools::project_manager::project_manager::ProjectManager...
-Generating docs for compound tinypipeline::tools::project_manager::project_manager::CreateProjectDialog...
 Generating docs for namespace tinypipeline::tools::publisher
 Generating docs for compound tinypipeline::tools::publisher::IPublisher...
 Generating graph info page...
@@ -206,6 +251,6 @@ Generating file index...
 Generating file member index...
 Generating example index...
 finalizing index lists...
-symbol cache used 113/65536 hits=4537 misses=113
-lookup cache used 190/65536 hits=439 misses=210
+symbol cache used 71/65536 hits=2401 misses=71
+lookup cache used 98/65536 hits=173 misses=102
 finished...
