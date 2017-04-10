@@ -25,8 +25,8 @@ class FlowNode(object):
         pretty += ''.join(['\n\t(OUT) {0} ({1})'.format(i, getattr(self, i))
                              for i in self.flow_outs])
         return pretty
-    
-    def connect(self, flow_out, flow_in):
+
+    def connect(self, flow_out, in_node, flow_in):
         """@todo documentation for connect."""
         if flow_out not in self.connections.keys():
             self.connections[flow_out] = list()
@@ -49,32 +49,18 @@ class FlowNode(object):
 
     def evaluate(self):
         """@todo documentation for evaluate."""
-        print 'Computing:', self
         self.compute()
         for flow_out, flow_ins in self.connections.items():
             for flow_in in flow_ins:
                 setattr(flow_in[0], flow_in[1], getattr(self, flow_out))
             # end for
         # end for
+        print(self)
     # end def evaluate
-    
+
     @abstractmethod
     def compute(self, *args, **kwargs):
         """@todo documentation for compute."""
         pass
     # end def compute
 # end class FlowNode
-
-
-def flow_out(function):
-    """"""
-    function.flow_out = True
-    return function
-# end def flow_out
-
-
-def flow_in(function):
-    """"""
-    function.flow_in = True
-    return function
-# end def flow_in

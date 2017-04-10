@@ -7,35 +7,30 @@ from tinypipeline.core import config
 from tinypipeline.core.paths import Paths
 from tinypipeline.core.asset import Asset
 from tinypipeline.core.flow.engine import FlowEngine
-from tinypipeline.core.flow.node import FlowNode, flow_in, flow_out
-__all__ = ['IPublisher']
+from tinypipeline.core.flow.node import FlowNode
+from tinypipeline.core.flow.app import FlowApp
+__all__ = ['PublisherApp']
 
 
-class IPublisher(FlowNode):
-    """Publish a new version of an Asset."""
+class Publish(FlowNode):
 
-    @flow_out
-    def published_file(self):
-        """@todo documentation for published_file."""
-        return self._published_file
-    # end def published_file
+    flow_ins = ['asset']
+    flow_outs = ['published_file']
 
-    def compute(self, asset, notes):
-        """Publish the given asset."""
-        next_version = asset.next_version
-        if not os.path.exists(os.path.dirname(next_version.path)):
-            os.makedirs(os.path.dirname(next_version.path))
+    def compute(self):
+        # next_version = asset.next_version
+        # if not os.path.exists(os.path.dirname(next_version.path)):
+        #     os.makedirs(os.path.dirname(next_version.path))
 
-        # Save the new version and the corresponding notes
-        self.save_file(next_version.path)
-        self.save_notes(next_version, notes)
+        # # Save the new version and the corresponding notes
+        # self.save_file(next_version.path)
+        # self.save_notes(next_version, notes)
 
-        # Update the latest version and the corresponding notes
-        shutil.copy2(next_version.path, asset.latest_version.path)
-        shutil.copy2(next_version.notes_file, asset.latest_version.notes_file)
+        # # Update the latest version and the corresponding notes
+        # shutil.copy2(next_version.path, asset.latest_version.path)
+        # shutil.copy2(next_version.notes_file, asset.latest_version.notes_file)
 
-        self._published_file = next_version
-    # end def compute
+        self.published_file = self.asset.next_version
 
     def save_notes(self, asset_file, notes):
         """Save the notes next to the asset file."""
@@ -48,57 +43,31 @@ class IPublisher(FlowNode):
         """Save the file."""
         raise NotImplementedError
     # end def save_file
-# end class IPublisher
-
-
-# asset -> NextVersion -> SaveFile  -> publish
-# notes -> ----------- -> save_notes -> publish
 
 
 class NextVersion(FlowNode):
 
-    @flow_in
-    def asset(self, value):
-        self._asset = value
-
-    @flow_out
-    def next_version(self):
-        return self._next_version
+    flow_ins = ['asset']
+    flow_outs = ['next_version']
 
     def compute(self):
-        self._next_version = self._asset.next_version
+        self.next_version = self.asset.next_version
 
 
 class SaveFile(FlowNode):
 
-    @flow_in
-    def asset_file(self, value):
-        self._asset_file = value
-
-    @flow_out
-    def saved_asset_file(self):
-        return self._saved_asset_file
+    flow_ins = ['asset_file']
 
     def compute(self):
-        self._saved_asset_file = self._asset_file
+        self.saved_asset_file = self.asset_file
 
 
 class SaveNotes(FlowNode):
 
-    @flow_in
-    def notes(self, value):
-        self._notes = value
-
-    @flow_in
-    def asset_file(self, value):
-        self._asset_file = value
-
-    @flow_out
-    def saved_notes_file(self):
-        return self._saved_notes_file
+    flow_ins = ['notes', 'asset_file']
 
     def compute(self):
-        self._saved_notes_file = self._asset_file.notes_file
+        pass
 
 
 # ---------------------------------------------------------------------
@@ -106,22 +75,59 @@ class SaveNotes(FlowNode):
 # ---------------------------------------------------------------------
 
 
+class PublisherApp(FlowApp):
+    """Publish a new version of an Asset."""
+
+    def __init__(self, asset, notes):
+        """@todo documentation for __init__."""
+
+        # Build the network
+        next_version = NextVersion()
+        save_file = SaveFile()
+        save_notes = SaveNotes()
+
+        self.nodes = [next_version, save_file, save_notes]
+
+        # Connect the nodes
+        next_version.connect('next_version', save_file, 'asset_file')
+        next_version.connect('next_version', save_notes, 'asset_file')
+
+        # Set the initial values
+        next_version.asset = asset
+        save_notes.notes = notes
+    # end def __init__
+# end class PublisherApp
+
+
 asset = Asset('MyProject', 'Tiger', 'model')
+notes = 'MyNotes'
 
 
-nv = NextVersion()
-sf = SaveFile()
-sn = SaveNotes()
+p_app = PublisherApp(asset, notes)
 
-nv._asset = asset
-nv.connect(nv.next_version, sf.asset_file)
-nv.connect(nv.next_version, sn.asset_file)
-sn._notes = 'MyNotes'
+
 
 e = FlowEngine()
-e.nodes = [nv, sf]
-
+e.nodes = p_app.nodes
+print e.evaluation_sequence
 e.evaluate()
+
+
+
+
+# nv = NextVersion()
+# sf = SaveFile()
+# sn = SaveNotes()
+
+# nv._asset = asset
+# nv.connect(nv.next_version, sf.asset_file)
+# nv.connect(nv.next_version, sn.asset_file)
+# sn._notes = 'MyNotes'
+
+# e = FlowEngine()
+# e.nodes = [nv, sf]
+
+# e.evaluate()
 
 # pn = PublishNode()
 # pn._file_to_publish = 'MyFile'
