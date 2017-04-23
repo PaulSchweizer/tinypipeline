@@ -3,7 +3,9 @@
 
 env_vars = [
     # Current project
-    'TINYPIPELINE_PROJECT'
+    'TINYPIPELINE_PROJECT',
+    'TINYPIPELINE_ASSET_NAME',
+    'TINYPIPELINE_ASSET_KIND'
 ]
 
 root = 'C:/PROJECTS/'

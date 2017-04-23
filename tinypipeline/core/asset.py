@@ -9,7 +9,7 @@ from tinypipeline.core.project import Project
 __all__ = ['Asset', 'AssetFile']
 
 
-if sys.version_info[0] > 2:
+if sys.version_info[0] >= 3:
     basestring = str
 
 
@@ -75,7 +75,7 @@ class Asset(object):
                                       name=self.name, kind=self.kind,
                                       ext=config.maya_ext)
         if not os.path.exists(filepath):
-            return None
+            return AssetFile(filepath)
         else:
             return AssetFile(filepath)
     # end def latest_version
