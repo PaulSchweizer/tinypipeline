@@ -26,6 +26,7 @@ class Paths(object):
         Returns:
             The path
         """
+        kwargs['padding'] = config.padding
         return os.path.join(config.root,
                             config.patterns[args[0]].format(**kwargs))
     # end def get
