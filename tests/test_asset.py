@@ -70,7 +70,7 @@ class TestAsset(unittest.TestCase):
         """Retrieve the latest published version."""
         asset = Asset('TestProject', 'AssetName', 'AssetKind')
 
-        self.assertIsNone(asset.latest_version)
+        print(asset.latest_version.path)
 
         # A latest version exists
         exists.return_value = True
